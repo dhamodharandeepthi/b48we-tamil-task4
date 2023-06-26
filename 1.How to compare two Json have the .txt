@@ -1,0 +1,14 @@
+1.How to compare two Json have the same properties wihout order.
+ Let object1={name: "Person1", age:5} ; 
+Let object2={age:5, name:"person1"};
+
+let object1 = {name: "Person1", age: 5};
+let object2 = {age: 5, name: "Person1"};
+let string1 = JSON.stringify(object1);
+let string2 = JSON.stringify(object2);
+let sortedString1 = string1.split('').sort().join('');
+let sortedString2 = string2.split('').sort().join('');
+
+let areEqual = sortedString1 === sortedString2;
+
+console.log(areEqual); 
